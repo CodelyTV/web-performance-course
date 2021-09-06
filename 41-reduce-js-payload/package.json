@@ -45,8 +45,8 @@
   ],
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
+    "dayjs": "^1.10.6",
     "http-server": "^0.12.3",
-    "moment": "^2.29.1",
     "web-vitals": "^2.1.0"
   }
 }

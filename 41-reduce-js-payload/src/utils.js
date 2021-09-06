@@ -1,12 +1,16 @@
-import moment from "moment";
+import "dayjs/locale/es";
 
-moment.locale("es");
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.locale("es");
+dayjs.extend(relativeTime);
 
 export function setTime() {
   const timeElements = document.querySelectorAll("time");
 
   timeElements.forEach((time) => {
-    const readableTime = moment(time.getAttribute("datetime")).fromNow();
+    const readableTime = dayjs(time.getAttribute("datetime")).fromNow();
 
     time.innerHTML = readableTime;
   });
