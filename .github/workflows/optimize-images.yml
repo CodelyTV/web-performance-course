@@ -2,10 +2,10 @@ name: Optimize Images
 on:
   pull_request:
     paths:
-      - '42-optimize/**/*.jpg'
-      - '42-optimize/**/*.jpeg'
-      - '42-optimize/**/*.png'
-      - '42-optimize/**/*.webp'
+      - '42-optimize-images/**/*.jpg'
+      - '42-optimize-images/**/*.jpeg'
+      - '42-optimize-images/**/*.png'
+      - '42-optimize-images/**/*.webp'
 jobs:
   build:
     # Only run on Pull Requests within the same repository, and not from forks.
