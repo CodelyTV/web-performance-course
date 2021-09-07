@@ -8,7 +8,6 @@ import "./assets/css/custom.css";
 
 import { getCLS, getFID, getLCP } from "web-vitals";
 
-import { initForm } from "./form";
 import { initModals } from "./modals";
 import { setUpVideoModal } from "./player";
 import { initSlider } from "./slider";
@@ -33,6 +32,11 @@ function init() {
   setTime();
   initModals();
   initSlider();
-  initForm();
   setUpVideoModal();
+
+  document.getElementById("subscribe").addEventListener("click", () => {
+    import("./form").then(({ initForm }) => {
+      initForm();
+    });
+  });
 }
