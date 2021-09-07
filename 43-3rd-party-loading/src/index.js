@@ -10,6 +10,7 @@ import { getCLS, getFID, getLCP } from "web-vitals";
 
 import { initForm } from "./form";
 import { initModals } from "./modals";
+import { setUpVideoModal } from "./player";
 import { initSlider } from "./slider";
 import { setTime } from "./utils";
 
@@ -33,4 +34,5 @@ function init() {
   initModals();
   initSlider();
   initForm();
+  setUpVideoModal();
 }
