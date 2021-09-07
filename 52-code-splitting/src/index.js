@@ -35,7 +35,7 @@ function init() {
   setUpVideoModal();
 
   document.getElementById("subscribe").addEventListener("click", () => {
-    import("./form").then(({ initForm }) => {
+    import(/* webpackPrefetch: true */ "./form").then(({ initForm }) => {
       initForm();
     });
   });
