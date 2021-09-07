@@ -39,4 +39,6 @@ function init() {
       initForm();
     });
   });
+
+  navigator.serviceWorker.register("/service-worker.js");
 }
