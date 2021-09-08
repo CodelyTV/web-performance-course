@@ -91,6 +91,9 @@ body {
 
 #home-video img {
   margin-bottom: 0;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 
 #home-video > div {
@@ -189,7 +192,7 @@ button.stripe-button-el.disabled > span:hover {
 
 .bar .logo {
   max-width: none;
-  max-height: 2.3em;
+  max-height: none;
 }
 
 .testimonial__image img {
@@ -204,6 +207,13 @@ button.stripe-button-el.disabled > span:hover {
 #courses a {
   text-decoration: none;
   font-weight: 600;
+}
+
+.project-thumb img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  background: #333;
 }
 
 /* Vertically center filters selector */
@@ -363,10 +373,6 @@ button.stripe-button-el.disabled > span:hover {
 
 .companies-list li {
   margin-right: 1.5em !important;
-}
-
-.companies-list img {
-  max-width: 150px;
 }
 
 #companies-trust {
