@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { GenerateSW } = require("workbox-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const common = require("./webpack.common.js");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -11,6 +12,9 @@ module.exports = merge(common, {
   plugins: [
     new GenerateSW(),
     new MiniCssExtractPlugin(),
+    new PurgecssPlugin({
+      paths: ["index.html"],
+    }),
     new HtmlCriticalWebpackPlugin({
       base: path.resolve(__dirname, "dist"),
       src: "index.html",
