@@ -5,6 +5,7 @@ const { GenerateSW } = require("workbox-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const common = require("./webpack.common.js");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -44,5 +45,8 @@ module.exports = merge(common, {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
+  },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin(), "..."],
   },
 });
