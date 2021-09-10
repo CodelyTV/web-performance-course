@@ -522,3 +522,9 @@ button.stripe-button-el.disabled > span:hover {
 .modal.hidden {
   display: none;
 }
+
+.vercel-link {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: 212px;
+}
