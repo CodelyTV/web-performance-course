@@ -49,4 +49,7 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [new CssMinimizerPlugin(), "..."],
   },
+  performance: {
+    hints: "error",
+  },
 });

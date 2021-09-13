@@ -4,15 +4,8 @@ module.exports = {
       preset: "lighthouse:no-pwa",
       assertions: {
         // Performance related
-        // "font-display": "off",
-        // "unsized-images": "off",
-        // "unused-css-rules": "off",
-        // "unused-javascript": "off",
-        // "uses-optimized-images": "off",
-        // "uses-responsive-images": "off",
-        // "unminified-css": "off",
-        // "third-party-facades": "off",
-        // "offscreen-images": "off",
+        "font-display": "warn",
+        "unused-javascript": "warn",
         // Not performance related
         "tap-targets": "off",
         "non-composited-animations": "off",
