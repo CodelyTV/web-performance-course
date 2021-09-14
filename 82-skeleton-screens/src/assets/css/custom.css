@@ -217,11 +217,47 @@ button.stripe-button-el.disabled > span:hover {
   width: 100%;
   height: 1em;
   border-radius: 0.5em;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(10, 10, 10, 0.4);
   margin: 1.2em 0;
 }
 .testimonial-placeholder__text:nth-child(even) {
   width: 80%;
+}
+
+@supports (mix-blend-mode: overlay) {
+  @keyframes aniHorizontal {
+    0% {
+      background-position: -100% 0;
+    }
+
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  .testimonial-placeholder__item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-placeholder__item:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-name: aniHorizontal;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2) 2%,
+      rgba(0, 0, 0, 0.8) 33%,
+      rgba(0, 0, 0, 0.2) 66%
+    );
+    background-size: 50%;
+    mix-blend-mode: overlay;
+  }
 }
 
 /* courses masonry */

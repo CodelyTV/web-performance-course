@@ -15,6 +15,7 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin(),
     new PurgecssPlugin({
       paths: ["index.html"],
+      safelist: [/^testimonial/],
     }),
     new HtmlCriticalWebpackPlugin({
       base: path.resolve(__dirname, "dist"),
