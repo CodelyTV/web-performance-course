@@ -1,6 +1,7 @@
 export function renderUsers() {
   const clients = document.getElementById("clients");
   loadUsers().then((users) => {
+    clients.innerHTML = "";
     users.slice(0, 8).forEach((user) => clients.appendChild(userHtml(user)));
   });
 }

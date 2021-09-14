@@ -195,13 +195,33 @@ button.stripe-button-el.disabled > span:hover {
   max-height: none;
 }
 
-.testimonial__image img {
-  border-radius: 50%;
-  max-width: 5rem;
-}
-
 .imagebg {
   background-size: cover;
+}
+
+.testimonial-placeholder {
+  min-height: 252px;
+}
+
+.testimonial__image img,
+.testimonial-placeholder__img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.85714286em;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.testimonial-placeholder__text {
+  display: block;
+  width: 100%;
+  height: 1em;
+  border-radius: 0.5em;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 1.2em 0;
+}
+.testimonial-placeholder__text:nth-child(even) {
+  width: 80%;
 }
 
 /* courses masonry */
