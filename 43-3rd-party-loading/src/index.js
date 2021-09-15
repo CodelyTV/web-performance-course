@@ -6,26 +6,15 @@ import "./assets/css/theme-greensea.css";
 import "./assets/css/normalize.css";
 import "./assets/css/custom.css";
 
-import { getCLS, getFID, getLCP } from "web-vitals";
-
+import { initAnalytics, initWebVitals } from "./analytics";
 import { initForm } from "./form";
 import { initModals } from "./modals";
 import { setUpVideoModal } from "./player";
 import { initSlider } from "./slider";
 import { setTime } from "./utils";
 
-function sendToGoogleAnalytics({ name, delta, id }) {
-  window.gtag("event", name, {
-    event_category: "Web Vitals",
-    event_label: id,
-    value: Math.round(name === "CLS" ? delta * 1000 : delta),
-    non_interaction: true,
-  });
-}
-
-getCLS(sendToGoogleAnalytics);
-getFID(sendToGoogleAnalytics);
-getLCP(sendToGoogleAnalytics);
+initAnalytics();
+initWebVitals();
 
 document.onload = init();
 
