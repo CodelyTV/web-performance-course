@@ -12,7 +12,7 @@ const getAllFiles = function (dirPath, arrayOfFiles) {
   arrayOfFiles = arrayOfFiles || [];
 
   files.forEach(function (file) {
-    const isImageFile = /\.(gif|jpe?g|png|tif?f|webp|avif|jcl|svg)$/i.test(
+    const isImageFile = /\.(gif|jpe?g|png|tif?f|webp|avif|jxl|svg)$/i.test(
       file
     );
 
