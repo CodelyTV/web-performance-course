@@ -2,6 +2,12 @@ const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const CLOUDINARY_URL =
+  "https://res.cloudinary.com/webperf-codelytv/image/upload/";
+const CLOUDINARY_PRESET = "f_auto,q_auto";
+const CLOUDNINARY_FOLDER = "/CodelyTv/";
+const PUBLIC_PATH = `${CLOUDINARY_URL}${CLOUDINARY_PRESET}${CLOUDNINARY_FOLDER}`;
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -35,8 +41,13 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.(gif|svg|png|je?pg|webp|avif|jxl)$/i,
         type: "asset/resource",
+        generator: {
+          emit: false,
+          filename: "[file]",
+          publicPath: PUBLIC_PATH,
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
