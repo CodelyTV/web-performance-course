@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
+    "prebuild": "node ./scripts/upload-to-cloudinary.js",
     "build": "webpack --config webpack.prod.js",
     "start": "http-server dist",
     "lint": "eslint --ignore-path .gitignore . --ext .js,.html",
@@ -45,6 +46,7 @@
   ],
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
+    "cloudinary": "^1.27.1",
     "dayjs": "^1.10.6",
     "http-server": "^0.12.3",
     "web-vitals": "^2.1.0"
